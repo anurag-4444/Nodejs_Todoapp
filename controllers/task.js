@@ -66,7 +66,7 @@ export const deleteTask = async (req, res, next) => {
 
     try {
         // let id = mongoose.Types.ObjectId.isValid(req.params.id);
-        const task = await Task.findById(req.body.id)
+        const task = await Task.findById(req.params.id)
     
         if (!task) return next(new ErrorHandler("Task Not Found", 404))
     
